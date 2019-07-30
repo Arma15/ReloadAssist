@@ -1,0 +1,10 @@
+C:\Users\kflor\source\repos\Reloading App\Reloading App\bin\Debug\Reloading App.exe.config
+C:\Users\kflor\source\repos\Reloading App\Reloading App\bin\Debug\Reloading App.exe
+C:\Users\kflor\source\repos\Reloading App\Reloading App\bin\Debug\Reloading App.pdb
+C:\Users\kflor\source\repos\Reloading App\Reloading App\obj\Debug\Reloading App.csprojAssemblyReference.cache
+C:\Users\kflor\source\repos\Reloading App\Reloading App\obj\Debug\Reloading_App.Properties.Resources.resources
+C:\Users\kflor\source\repos\Reloading App\Reloading App\obj\Debug\Reloading App.csproj.GenerateResource.cache
+C:\Users\kflor\source\repos\Reloading App\Reloading App\obj\Debug\Reloading App.csproj.CoreCompileInputs.cache
+C:\Users\kflor\source\repos\Reloading App\Reloading App\obj\Debug\Reloading App.exe
+C:\Users\kflor\source\repos\Reloading App\Reloading App\obj\Debug\Reloading App.pdb
+C:\Users\kflor\source\repos\Reloading App\Reloading App\obj\Debug\Reloading_App.UserInterface.resources
