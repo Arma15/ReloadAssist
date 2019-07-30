@@ -41,6 +41,8 @@
             this.CaliberInfoBox = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ErrorText = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.GunType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // listView1
@@ -68,7 +70,7 @@
             // 
             // search_btn
             // 
-            this.search_btn.Location = new System.Drawing.Point(406, 202);
+            this.search_btn.Location = new System.Drawing.Point(462, 201);
             this.search_btn.Name = "search_btn";
             this.search_btn.Size = new System.Drawing.Size(75, 23);
             this.search_btn.TabIndex = 2;
@@ -89,7 +91,7 @@
             // BulletWeight
             // 
             this.BulletWeight.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.BulletWeight.Location = new System.Drawing.Point(183, 204);
+            this.BulletWeight.Location = new System.Drawing.Point(239, 203);
             this.BulletWeight.Name = "BulletWeight";
             this.BulletWeight.Size = new System.Drawing.Size(100, 20);
             this.BulletWeight.TabIndex = 5;
@@ -99,7 +101,7 @@
             // PowderType
             // 
             this.PowderType.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.PowderType.Location = new System.Drawing.Point(289, 204);
+            this.PowderType.Location = new System.Drawing.Point(345, 203);
             this.PowderType.Name = "PowderType";
             this.PowderType.Size = new System.Drawing.Size(100, 20);
             this.PowderType.TabIndex = 6;
@@ -109,7 +111,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(97, 188);
+            this.label1.Location = new System.Drawing.Point(144, 183);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 8;
@@ -118,7 +120,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(197, 188);
+            this.label2.Location = new System.Drawing.Point(246, 183);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 9;
@@ -128,7 +130,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(303, 188);
+            this.label3.Location = new System.Drawing.Point(356, 183);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 10;
@@ -146,12 +148,12 @@
             "7.62x39",
             ".308/7.62x51",
             "6.5 Creedmor"});
-            this.CaliberMenu.Location = new System.Drawing.Point(56, 204);
+            this.CaliberMenu.Location = new System.Drawing.Point(111, 201);
             this.CaliberMenu.Name = "CaliberMenu";
             this.CaliberMenu.Size = new System.Drawing.Size(122, 21);
             this.CaliberMenu.TabIndex = 12;
             this.CaliberMenu.Tag = "CaliberList";
-            this.CaliberMenu.Text = "Select From List";
+            this.CaliberMenu.Text = "Select";
             this.CaliberMenu.SelectedIndexChanged += new System.EventHandler(this.Caliber_IndexChanged);
             // 
             // CaliberInfoBox
@@ -187,12 +189,36 @@
             this.ErrorText.Text = "Errors displayed here";
             this.ErrorText.Visible = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(35, 183);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Gun Type";
+            // 
+            // GunType
+            // 
+            this.GunType.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.GunType.FormattingEnabled = true;
+            this.GunType.Items.AddRange(new object[] {
+            "Rifle",
+            "Handgun"});
+            this.GunType.Location = new System.Drawing.Point(25, 201);
+            this.GunType.Name = "GunType";
+            this.GunType.Size = new System.Drawing.Size(80, 21);
+            this.GunType.TabIndex = 17;
+            this.GunType.Text = "Select";
+            // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(1038, 657);
+            this.Controls.Add(this.GunType);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.ErrorText);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.CaliberInfoBox);
@@ -228,6 +254,8 @@
         private System.Windows.Forms.RichTextBox CaliberInfoBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox ErrorText;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox GunType;
     }
 }
 

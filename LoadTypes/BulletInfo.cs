@@ -8,14 +8,13 @@ namespace LoadTypes
 {
     class BulletInfo
     {
-        #region data members
+        #region Data Members
         /* 
         *  Data members: B.C, S.D, Type, Weight, recommended powder load, fps per load, etc.
         */
         public List<PowderInfo> Powders; // Each PowderStats item will contain info on a specific powder 
 
-        #endregion data members
-
+        #endregion Data Members
 
         #region Properties
 
@@ -47,7 +46,7 @@ namespace LoadTypes
 
         #endregion Properties
 
-        #region constructors / destructors
+        #region Constructors / Destructors
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -57,11 +56,15 @@ namespace LoadTypes
         /// Destructor
         /// </summary>
         ~BulletInfo() { }
-        #endregion constructors / destructors
+        #endregion Constructors / Destructors
 
-        #region functions
+        #region Public Functions
 
-        #endregion functions
+        #endregion Public Functions
+
+        #region Private Functions
+
+        #endregion Private Functions
 
     }
 }

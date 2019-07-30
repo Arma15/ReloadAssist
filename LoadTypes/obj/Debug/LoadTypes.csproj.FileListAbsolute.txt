@@ -1,0 +1,7 @@
+C:\Users\kflor\source\repos\Reloading App\LoadTypes\bin\Debug\LoadTypes.exe.config
+C:\Users\kflor\source\repos\Reloading App\LoadTypes\bin\Debug\LoadTypes.exe
+C:\Users\kflor\source\repos\Reloading App\LoadTypes\bin\Debug\LoadTypes.pdb
+C:\Users\kflor\source\repos\Reloading App\LoadTypes\obj\Debug\LoadTypes.csprojAssemblyReference.cache
+C:\Users\kflor\source\repos\Reloading App\LoadTypes\obj\Debug\LoadTypes.csproj.CoreCompileInputs.cache
+C:\Users\kflor\source\repos\Reloading App\LoadTypes\obj\Debug\LoadTypes.exe
+C:\Users\kflor\source\repos\Reloading App\LoadTypes\obj\Debug\LoadTypes.pdb

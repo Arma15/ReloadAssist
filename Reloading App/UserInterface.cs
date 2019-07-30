@@ -24,7 +24,9 @@ namespace Reloading_App
         public UserInterface()
         {
             InitializeComponent();
-            CaliberMenu.Items.Add("this"); // Example
+            FileParser FP = new FileParser();
+            FP.ReadFile();
+            // CaliberMenu.Items.Add("this"); // Example
         }
 
         private void label1_Click(object sender, EventArgs e)
