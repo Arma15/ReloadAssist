@@ -7,32 +7,40 @@ using Microsoft.VisualBasic.FileIO;
 
 namespace Reloading_App
 {
-    class FileParser
+    /// <summary>
+    /// To clairify type of data being gathered
+    /// </summary>
+    public enum Type
     {
-        public string Path { get; private set; }
+        Rifle = 1,
+        Handgun = 2,
 
+        Header = 10,
+        Data = 11,
+        Info = 12
+
+    }
+
+    /// <summary>
+    /// Will process the files in the directory
+    /// </summary>
+    public class FileProcessor
+    {
         /// <summary>
-        /// To clairify type of data being gathered
+        /// Store the path to desired file
         /// </summary>
-        public enum Type
-        {
-            Rifle = 1,
-            Handgun = 2,
-
-            Header = 10,
-            Data = 11,
-            Info = 12
-
-        }
+        public string Path { get; private set; }
+        public List<string> OutputData { get; private set; }
 
         /// <summary>
-        /// Reads the input .csv file and stores the info
+        /// Reads the input .csv file and processes the data
         /// </summary>
         /// <param name="NewPath"></param>
-        public void ReadFile(string NewPath = "C:\\Users\\kflor\\source\\repos\\Reloading App\\Reloading App\\223_Caliber_Info.csv")
+        public void ProcessFile(string NewPath = "C:\\Users\\kflor\\source\\repos\\Reloading App\\Reloading App\\223_Caliber_Info.csv")
         {
             Path = NewPath;
             string[] ColumnHeaders;
+            // Read the file
             using (TextFieldParser CSVParser = new TextFieldParser(Path))
             {
                 CSVParser.SetDelimiters(new string[] { "," });
@@ -45,8 +53,10 @@ namespace Reloading_App
                 {
                     // Read current line fields, pointer moves to the next line.
                     string[] Fields = CSVParser.ReadFields();
+                    // Clears empty cells from the array
                     Fields.Where(x => !string.IsNullOrEmpty(x)).ToArray();
-                    FormatData(ref Fields);
+                    // Format data gathered from file and add to output list
+                    OutputData.Add(FormatData(Fields));
 
                 }
 
@@ -58,9 +68,10 @@ namespace Reloading_App
         /// Formats the data gathered from the files
         /// </summary>
         /// <param name="Data"></param>
-        public void FormatData(ref string[] Data)
+        public string FormatData(string[] Data)
         {
-
+            // TODO
+            return string.Empty;
         }
 
     }

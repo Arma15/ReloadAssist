@@ -9,19 +9,26 @@ namespace LoadTypes
     class PowderInfo
     {
         #region data members
-        public Dictionary<float, float> P_Load_Velocity { get; private set; } // holds the amount of powder as key and value is velocity
+        /// <summary>
+        /// holds the amount of powder as key and value is velocity
+        /// </summary>
+        public Dictionary<float, float> P_Load_Velocity { get; private set; }
 
         #endregion data members
 
         #region Properties
         /// <summary>
-        /// 
+        /// EX: IMR4198, CFE223, etc..
         /// </summary>
         public string Powder_Type { get; private set; }
 
         #endregion Properties
 
         #region constructors / destructors
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_name"></param>
         public PowderInfo(string p_name) { Powder_Type = p_name; }
 
         #endregion constructors / destructors

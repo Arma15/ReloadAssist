@@ -24,8 +24,8 @@ namespace Reloading_App
         public UserInterface()
         {
             InitializeComponent();
-            FileParser FP = new FileParser();
-            FP.ReadFile();
+            FileProcessor FP = new FileProcessor();
+            FP.ProcessFile();
             // CaliberMenu.Items.Add("this"); // Example
         }
 
