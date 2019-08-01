@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using LoadTypes;
 
 namespace Reloading_App
 {
@@ -14,9 +12,17 @@ namespace Reloading_App
         [STAThread]
         static void Main()
         {
+            FileProcessor FP = new FileProcessor();
+            DataSource DS = new DataSource();
+
+            // TODO
+            // Load default data files
+            // populate classes with the data
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new UserInterface());
+            
         }
     }
 }

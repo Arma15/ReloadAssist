@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LoadTypes
 {
+    /// <summary>
+    /// Will store bullet info like brand and weight of a bullet
+    /// i.e., 35g NTX
+    /// </summary>
     public class BulletType
     {
-        /* 
-        *  Data members: B.C, S.D, Type, Weight, recommended powder load, fps per load, etc.
-        */
+        //  Data members: B.C, S.D, Type, Weight, recommended powder load, fps per load, etc.
         #region Data Fields
         /// <summary>
         /// Each PowderInfo item will contain info on a specific powder 

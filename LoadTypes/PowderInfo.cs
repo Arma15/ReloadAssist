@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LoadTypes
 {
@@ -10,23 +7,24 @@ namespace LoadTypes
     {
         #region Data Fields
         /// <summary>
-        /// holds the amount of powder as key and value is velocity
+        /// holds the amount of powder as key and value is velocity 
+        /// generated from the powder load, i.e., 35.5gr, 2530 fps
         /// </summary>
-        public Dictionary<float, float> P_Load_Velocity { get; private set; }
+        public Dictionary<float, float> PowderLoadVelocity { get; private set; }
 
         /// <summary>
-        /// EX: IMR4198, CFE223, etc..
+        /// Ex: IMR4198, CFE223, etc..
         /// </summary>
-        public string PowderModel { get; private set; }
+        public string PowderName { get; private set; }
 
         #endregion Data Fields
 
         #region Constructors / Destructors
         /// <summary>
-        /// 
+        /// Constructor that sets
         /// </summary>
-        /// <param name="p_name"></param>
-        public PowderType(string p_name) { PowderModel = p_name; }
+        /// <param name="powdername"></param>
+        public PowderType(string powdername) { PowderName = powdername; }
 
         #endregion Constructors / Destructors
 
