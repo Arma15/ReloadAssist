@@ -30,7 +30,6 @@ namespace Reloading_App
         /// Store the path to desired file
         /// </summary>
         public string Path { get; private set; }
-        public List<string> OutputData { get; private set; }
 
         /// <summary>
         /// Reads the input .csv file and processes the data
@@ -55,8 +54,8 @@ namespace Reloading_App
                     string[] Fields = CSVParser.ReadFields();
                     // Clears empty cells from the array
                     Fields.Where(x => !string.IsNullOrEmpty(x)).ToArray();
-                    // Format data gathered from file and add to output list
-                    OutputData.Add(FormatData(Fields));
+                    // Input data gathered from file
+                    InputData(Fields);
 
                 }
 
@@ -68,10 +67,10 @@ namespace Reloading_App
         /// Formats the data gathered from the files
         /// </summary>
         /// <param name="Data"></param>
-        public string FormatData(string[] Data)
+        public void InputData(string[] Data)
         {
             // TODO
-            return string.Empty;
+
         }
 
     }

@@ -6,56 +6,53 @@ using System.Threading.Tasks;
 
 namespace LoadTypes
 {
-    class BulletInfo
+    public class BulletType
     {
-        #region Data Members
         /* 
         *  Data members: B.C, S.D, Type, Weight, recommended powder load, fps per load, etc.
         */
-        public List<PowderInfo> Powders; // Each PowderStats item will contain info on a specific powder 
-
-        #endregion Data Members
-
-        #region Properties
-
+        #region Data Fields
+        /// <summary>
+        /// Each PowderInfo item will contain info on a specific powder 
+        /// </summary>
+        public List<PowderType> Powders;
         /// <summary>
         /// In ballistics, the ballistic coefficient (BC) of a bullet is a measure of its ability to 
         /// overcome air resistance in flight. A high BC means the object will slow down less. 
         /// It will have more of its speed left when it reaches the target. BC depends on mass, 
         /// diameter, and drag coefficient.
         /// </summary>
-        public float Bullet_Coefficient { get; private set; }
+        public float BulletCoefficient { get; private set; }
         /// <summary>
         /// Sectional density (SD) is the numerical result of a calculation that compares a bullet's 
         /// weight to its diameter. To calculate a bullet's sectional density divide the bullet's 
         /// weight (in pounds) by its diameter (in inches), squared.
         /// </summary>
-        public float Sectional_Density { get; private set; }
+        public float SectionalDensity { get; private set; }
         /// <summary>
         /// Bullet brand i.e., Hornady, Winchester, Federal, etc.
         /// </summary>
-        public float Bullet_Brand { get; private set; }
+        public float BulletBrand { get; private set; }
         /// <summary>
         /// Bullet weight is measured in grains
         /// </summary>
-        public int Bullet_Weight { get; private set; }
+        public int BulletWeight { get; private set; }
         /// <summary>
         /// Not always needed, as it falls under specific calibers
         /// </summary>
-        public float Bullet_Diameter { get; private set; }
+        public float BulletDiameter { get; private set; }
 
-        #endregion Properties
+        #endregion Data Fields
 
         #region Constructors / Destructors
         /// <summary>
         /// Default constructor
         /// </summary>
-        public BulletInfo() { }
-
+        public BulletType() { }
         /// <summary>
         /// Destructor
         /// </summary>
-        ~BulletInfo() { }
+        ~BulletType() { }
         #endregion Constructors / Destructors
 
         #region Public Functions
