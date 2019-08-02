@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BulletInfo.cs" />
     <Compile Include="Caliber.cs" />
+    <Compile Include="DataSource.cs" />
     <Compile Include="PowderInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

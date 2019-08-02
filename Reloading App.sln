@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2050
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reloading App", "Reloading App\Reloading App.csproj", "{A86EC766-A78A-46D9-9B4B-9F098A16AE52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadTypes", "LoadTypes\LoadTypes.csproj", "{9B34AE78-8778-4754-9592-FFD06990FB06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadData", "LoadTypes\LoadData.csproj", "{9B34AE78-8778-4754-9592-FFD06990FB06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

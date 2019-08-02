@@ -10,13 +10,14 @@ namespace Reloading_App
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             FileProcessor FP = new FileProcessor();
             DataSource DS = new DataSource();
+            // Load default data files
+            FP.ProcessFile();
 
             // TODO
-            // Load default data files
             // populate classes with the data
 
             Application.EnableVisualStyles();

@@ -28,188 +28,190 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.search_btn = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.BulletWeight = new System.Windows.Forms.TextBox();
-            this.PowderType = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.CaliberMenu = new System.Windows.Forms.ComboBox();
-            this.CaliberInfoBox = new System.Windows.Forms.RichTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ErrorText = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.GunType = new System.Windows.Forms.ComboBox();
+            this.MainPage = new System.Windows.Forms.ListView();
+            this.Welcome_TextBox = new System.Windows.Forms.TextBox();
+            this.Search_Button = new System.Windows.Forms.Button();
+            this.DataOutput_TextBox = new System.Windows.Forms.RichTextBox();
+            this.BulletType_TextBox = new System.Windows.Forms.TextBox();
+            this.PowderType_TextBox = new System.Windows.Forms.TextBox();
+            this.Caliber_Label = new System.Windows.Forms.Label();
+            this.BulletType_Label = new System.Windows.Forms.Label();
+            this.PowderType_Label = new System.Windows.Forms.Label();
+            this.CaliberMenu_DropDown = new System.Windows.Forms.ComboBox();
+            this.CaliberInfo_TextBox = new System.Windows.Forms.RichTextBox();
+            this.CaliberInfo_Label = new System.Windows.Forms.Label();
+            this.ErrorText_Label = new System.Windows.Forms.TextBox();
+            this.GunType_Label = new System.Windows.Forms.Label();
+            this.GunType_DropDown = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // listView1
+            // MainPage
             // 
-            this.listView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.listView1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.listView1.Location = new System.Drawing.Point(12, 12);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1014, 633);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.MainPage.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.MainPage.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.MainPage.Location = new System.Drawing.Point(12, 12);
+            this.MainPage.Name = "MainPage";
+            this.MainPage.Size = new System.Drawing.Size(1014, 633);
+            this.MainPage.TabIndex = 0;
+            this.MainPage.UseCompatibleStateImageBehavior = false;
             // 
-            // textBox1
+            // Welcome_TextBox
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(317, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(380, 23);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Welcome to Reloading Assistant!";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Welcome_TextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Welcome_TextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Welcome_TextBox.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Welcome_TextBox.Location = new System.Drawing.Point(317, 30);
+            this.Welcome_TextBox.Name = "Welcome_TextBox";
+            this.Welcome_TextBox.ReadOnly = true;
+            this.Welcome_TextBox.Size = new System.Drawing.Size(380, 23);
+            this.Welcome_TextBox.TabIndex = 1;
+            this.Welcome_TextBox.Text = "Welcome to Reloading Assistant!";
+            this.Welcome_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // search_btn
+            // Search_Button
             // 
-            this.search_btn.Location = new System.Drawing.Point(462, 201);
-            this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(75, 23);
-            this.search_btn.TabIndex = 2;
-            this.search_btn.Text = "Search";
-            this.search_btn.UseVisualStyleBackColor = true;
-            this.search_btn.Click += new System.EventHandler(this.Search_Click);
+            this.Search_Button.Location = new System.Drawing.Point(462, 201);
+            this.Search_Button.Name = "Search_Button";
+            this.Search_Button.Size = new System.Drawing.Size(75, 23);
+            this.Search_Button.TabIndex = 2;
+            this.Search_Button.Text = "Search";
+            this.Search_Button.UseVisualStyleBackColor = true;
+            this.Search_Button.Click += new System.EventHandler(this.Search_Click);
             // 
-            // richTextBox1
+            // DataOutput_TextBox
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.richTextBox1.Location = new System.Drawing.Point(25, 266);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(988, 363);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "Reloading Data Displayed here";
+            this.DataOutput_TextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.DataOutput_TextBox.Location = new System.Drawing.Point(25, 266);
+            this.DataOutput_TextBox.Name = "DataOutput_TextBox";
+            this.DataOutput_TextBox.ReadOnly = true;
+            this.DataOutput_TextBox.Size = new System.Drawing.Size(988, 363);
+            this.DataOutput_TextBox.TabIndex = 3;
+            this.DataOutput_TextBox.Text = "Reloading Data Displayed here";
             // 
-            // BulletWeight
+            // BulletType_TextBox
             // 
-            this.BulletWeight.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.BulletWeight.Location = new System.Drawing.Point(239, 203);
-            this.BulletWeight.Name = "BulletWeight";
-            this.BulletWeight.Size = new System.Drawing.Size(100, 20);
-            this.BulletWeight.TabIndex = 5;
-            this.BulletWeight.Text = "All";
-            this.BulletWeight.TextChanged += new System.EventHandler(this.BulletWeight_TextChanged);
+            this.BulletType_TextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.BulletType_TextBox.Location = new System.Drawing.Point(239, 203);
+            this.BulletType_TextBox.Name = "BulletType_TextBox";
+            this.BulletType_TextBox.Size = new System.Drawing.Size(100, 20);
+            this.BulletType_TextBox.TabIndex = 5;
+            this.BulletType_TextBox.Text = "All";
+            this.BulletType_TextBox.TextChanged += new System.EventHandler(this.BulletType_TextChanged);
             // 
-            // PowderType
+            // PowderType_TextBox
             // 
-            this.PowderType.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.PowderType.Location = new System.Drawing.Point(345, 203);
-            this.PowderType.Name = "PowderType";
-            this.PowderType.Size = new System.Drawing.Size(100, 20);
-            this.PowderType.TabIndex = 6;
-            this.PowderType.Text = "All";
-            this.PowderType.TextChanged += new System.EventHandler(this.PowderType_TextChanged);
+            this.PowderType_TextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.PowderType_TextBox.Location = new System.Drawing.Point(345, 203);
+            this.PowderType_TextBox.Name = "PowderType_TextBox";
+            this.PowderType_TextBox.Size = new System.Drawing.Size(100, 20);
+            this.PowderType_TextBox.TabIndex = 6;
+            this.PowderType_TextBox.Text = "All";
+            this.PowderType_TextBox.TextChanged += new System.EventHandler(this.PowderType_TextChanged);
             // 
-            // label1
+            // Caliber_Label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(144, 183);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Caliber";
+            this.Caliber_Label.AutoSize = true;
+            this.Caliber_Label.Location = new System.Drawing.Point(144, 183);
+            this.Caliber_Label.Name = "Caliber_Label";
+            this.Caliber_Label.Size = new System.Drawing.Size(39, 13);
+            this.Caliber_Label.TabIndex = 8;
+            this.Caliber_Label.Text = "Caliber";
             // 
-            // label2
+            // BulletType_Label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(246, 183);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Bullet Weight";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.BulletType_Label.AutoSize = true;
+            this.BulletType_Label.Location = new System.Drawing.Point(246, 183);
+            this.BulletType_Label.Name = "BulletType_Label";
+            this.BulletType_Label.Size = new System.Drawing.Size(60, 13);
+            this.BulletType_Label.TabIndex = 9;
+            this.BulletType_Label.Text = "Bullet Type";
             // 
-            // label3
+            // PowderType_Label
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(356, 183);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Powder Type";
+            this.PowderType_Label.AutoSize = true;
+            this.PowderType_Label.Location = new System.Drawing.Point(356, 183);
+            this.PowderType_Label.Name = "PowderType_Label";
+            this.PowderType_Label.Size = new System.Drawing.Size(70, 13);
+            this.PowderType_Label.TabIndex = 10;
+            this.PowderType_Label.Text = "Powder Type";
             // 
-            // CaliberMenu
+            // CaliberMenu_DropDown
             // 
-            this.CaliberMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.CaliberMenu_DropDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CaliberMenu.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.CaliberMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.CaliberMenu.FormattingEnabled = true;
-            this.CaliberMenu.Items.AddRange(new object[] {
+            this.CaliberMenu_DropDown.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.CaliberMenu_DropDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CaliberMenu_DropDown.FormattingEnabled = true;
+            this.CaliberMenu_DropDown.Items.AddRange(new object[] {
             ".223/5.56",
-            "7.62x39",
             ".308/7.62x51",
-            "6.5 Creedmor"});
-            this.CaliberMenu.Location = new System.Drawing.Point(111, 201);
-            this.CaliberMenu.Name = "CaliberMenu";
-            this.CaliberMenu.Size = new System.Drawing.Size(122, 21);
-            this.CaliberMenu.TabIndex = 12;
-            this.CaliberMenu.Tag = "CaliberList";
-            this.CaliberMenu.Text = "Select";
-            this.CaliberMenu.SelectedIndexChanged += new System.EventHandler(this.Caliber_IndexChanged);
+            "6.5 Creedmor",
+            "7.62x39"});
+            this.CaliberMenu_DropDown.Location = new System.Drawing.Point(111, 201);
+            this.CaliberMenu_DropDown.Name = "CaliberMenu_DropDown";
+            this.CaliberMenu_DropDown.Size = new System.Drawing.Size(122, 21);
+            this.CaliberMenu_DropDown.Sorted = true;
+            this.CaliberMenu_DropDown.TabIndex = 12;
+            this.CaliberMenu_DropDown.Tag = "CaliberList";
+            this.CaliberMenu_DropDown.Text = "Select";
+            this.CaliberMenu_DropDown.SelectedIndexChanged += new System.EventHandler(this.Caliber_IndexChanged);
             // 
-            // CaliberInfoBox
+            // CaliberInfo_TextBox
             // 
-            this.CaliberInfoBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.CaliberInfoBox.Location = new System.Drawing.Point(543, 128);
-            this.CaliberInfoBox.Name = "CaliberInfoBox";
-            this.CaliberInfoBox.ReadOnly = true;
-            this.CaliberInfoBox.Size = new System.Drawing.Size(470, 132);
-            this.CaliberInfoBox.TabIndex = 13;
-            this.CaliberInfoBox.Text = "Specific Caliber Info will be displayed here";
+            this.CaliberInfo_TextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.CaliberInfo_TextBox.Location = new System.Drawing.Point(543, 128);
+            this.CaliberInfo_TextBox.Name = "CaliberInfo_TextBox";
+            this.CaliberInfo_TextBox.ReadOnly = true;
+            this.CaliberInfo_TextBox.Size = new System.Drawing.Size(470, 132);
+            this.CaliberInfo_TextBox.TabIndex = 13;
+            this.CaliberInfo_TextBox.Text = "Specific Caliber Info will be displayed here";
             // 
-            // label4
+            // CaliberInfo_Label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(715, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Caliber Info";
+            this.CaliberInfo_Label.AutoSize = true;
+            this.CaliberInfo_Label.Location = new System.Drawing.Point(715, 112);
+            this.CaliberInfo_Label.Name = "CaliberInfo_Label";
+            this.CaliberInfo_Label.Size = new System.Drawing.Size(60, 13);
+            this.CaliberInfo_Label.TabIndex = 14;
+            this.CaliberInfo_Label.Text = "Caliber Info";
             // 
-            // ErrorText
+            // ErrorText_Label
             // 
-            this.ErrorText.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ErrorText.BackColor = System.Drawing.Color.IndianRed;
-            this.ErrorText.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorText.Location = new System.Drawing.Point(147, 128);
-            this.ErrorText.Margin = new System.Windows.Forms.Padding(5);
-            this.ErrorText.Name = "ErrorText";
-            this.ErrorText.ReadOnly = true;
-            this.ErrorText.Size = new System.Drawing.Size(200, 20);
-            this.ErrorText.TabIndex = 15;
-            this.ErrorText.Text = "Errors displayed here";
-            this.ErrorText.Visible = false;
+            this.ErrorText_Label.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ErrorText_Label.BackColor = System.Drawing.Color.IndianRed;
+            this.ErrorText_Label.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ErrorText_Label.Location = new System.Drawing.Point(147, 128);
+            this.ErrorText_Label.Margin = new System.Windows.Forms.Padding(5);
+            this.ErrorText_Label.Name = "ErrorText_Label";
+            this.ErrorText_Label.ReadOnly = true;
+            this.ErrorText_Label.Size = new System.Drawing.Size(200, 20);
+            this.ErrorText_Label.TabIndex = 15;
+            this.ErrorText_Label.Text = "Errors displayed here";
+            this.ErrorText_Label.Visible = false;
             // 
-            // label5
+            // GunType_Label
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 183);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Gun Type";
+            this.GunType_Label.AutoSize = true;
+            this.GunType_Label.Location = new System.Drawing.Point(35, 183);
+            this.GunType_Label.Name = "GunType_Label";
+            this.GunType_Label.Size = new System.Drawing.Size(54, 13);
+            this.GunType_Label.TabIndex = 16;
+            this.GunType_Label.Text = "Gun Type";
             // 
-            // GunType
+            // GunType_DropDown
             // 
-            this.GunType.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.GunType.FormattingEnabled = true;
-            this.GunType.Items.AddRange(new object[] {
-            "Rifle",
-            "Handgun"});
-            this.GunType.Location = new System.Drawing.Point(25, 201);
-            this.GunType.Name = "GunType";
-            this.GunType.Size = new System.Drawing.Size(80, 21);
-            this.GunType.TabIndex = 17;
-            this.GunType.Text = "Select";
+            this.GunType_DropDown.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.GunType_DropDown.FormattingEnabled = true;
+            this.GunType_DropDown.Items.AddRange(new object[] {
+            "Handgun",
+            "Rifle"});
+            this.GunType_DropDown.Location = new System.Drawing.Point(25, 201);
+            this.GunType_DropDown.Name = "GunType_DropDown";
+            this.GunType_DropDown.Size = new System.Drawing.Size(80, 21);
+            this.GunType_DropDown.Sorted = true;
+            this.GunType_DropDown.TabIndex = 17;
+            this.GunType_DropDown.Text = "Select";
+            this.GunType_DropDown.SelectedIndexChanged += new System.EventHandler(this.GunType_IndexChanged);
             // 
             // UserInterface
             // 
@@ -217,23 +219,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(1038, 657);
-            this.Controls.Add(this.GunType);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.ErrorText);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.CaliberInfoBox);
-            this.Controls.Add(this.CaliberMenu);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.PowderType);
-            this.Controls.Add(this.BulletWeight);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.search_btn);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.GunType_DropDown);
+            this.Controls.Add(this.GunType_Label);
+            this.Controls.Add(this.ErrorText_Label);
+            this.Controls.Add(this.CaliberInfo_Label);
+            this.Controls.Add(this.CaliberInfo_TextBox);
+            this.Controls.Add(this.CaliberMenu_DropDown);
+            this.Controls.Add(this.PowderType_Label);
+            this.Controls.Add(this.BulletType_Label);
+            this.Controls.Add(this.Caliber_Label);
+            this.Controls.Add(this.PowderType_TextBox);
+            this.Controls.Add(this.BulletType_TextBox);
+            this.Controls.Add(this.DataOutput_TextBox);
+            this.Controls.Add(this.Search_Button);
+            this.Controls.Add(this.Welcome_TextBox);
+            this.Controls.Add(this.MainPage);
             this.Name = "UserInterface";
-            this.Text = "Form1";
+            this.Text = "Reload Assist";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,21 +243,21 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button search_btn;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox BulletWeight;
-        private System.Windows.Forms.TextBox PowderType;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox CaliberMenu;
-        private System.Windows.Forms.RichTextBox CaliberInfoBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox ErrorText;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox GunType;
+        private System.Windows.Forms.ListView MainPage;
+        private System.Windows.Forms.TextBox Welcome_TextBox;
+        private System.Windows.Forms.Button Search_Button;
+        private System.Windows.Forms.RichTextBox DataOutput_TextBox;
+        private System.Windows.Forms.TextBox BulletType_TextBox;
+        private System.Windows.Forms.TextBox PowderType_TextBox;
+        private System.Windows.Forms.Label Caliber_Label;
+        private System.Windows.Forms.Label BulletType_Label;
+        private System.Windows.Forms.Label PowderType_Label;
+        private System.Windows.Forms.ComboBox CaliberMenu_DropDown;
+        private System.Windows.Forms.RichTextBox CaliberInfo_TextBox;
+        private System.Windows.Forms.Label CaliberInfo_Label;
+        private System.Windows.Forms.TextBox ErrorText_Label;
+        private System.Windows.Forms.Label GunType_Label;
+        private System.Windows.Forms.ComboBox GunType_DropDown;
     }
 }
 

@@ -84,9 +84,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LoadTypes\LoadTypes.csproj">
+    <ProjectReference Include="..\LoadTypes\LoadData.csproj">
       <Project>{9b34ae78-8778-4754-9592-ffd06990fb06}</Project>
-      <Name>LoadTypes</Name>
+      <Name>LoadData</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

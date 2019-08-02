@@ -9,9 +9,10 @@ namespace Reloading_App
     /// </summary>
     public enum Type
     {
+        // Gun type
         Rifle = 1,
         Handgun = 2,
-
+        // Type of data from .csv
         Header = 10,
         Data = 11,
         Info = 12
@@ -44,15 +45,15 @@ namespace Reloading_App
                 // Record the row with the column names
                 ColumnHeaders = CSVParser.ReadFields();
                 ColumnHeaders = ColumnHeaders.Where(x => !string.IsNullOrEmpty(x)).ToArray();
-
+                InputData(ColumnHeaders, Type.Header);
                 while (!CSVParser.EndOfData)
                 {
                     // Read current line fields, pointer moves to the next line.
                     string[] Fields = CSVParser.ReadFields();
                     // Clears empty cells from the array
-                    Fields.Where(x => !string.IsNullOrEmpty(x)).ToArray();
+                    Fields = Fields.Where(x => !string.IsNullOrEmpty(x)).ToArray();
                     // Input data gathered from file
-                    InputData(Fields);
+                    InputData(Fields, Type.Data);
 
                 }
 
@@ -64,7 +65,7 @@ namespace Reloading_App
         /// Formats the data gathered from the files
         /// </summary>
         /// <param name="Data"></param>
-        public void InputData(string[] Data)
+        public void InputData(string[] Data, Type Datatype)
         {
             // TODO
 
