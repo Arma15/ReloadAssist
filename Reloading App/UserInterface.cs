@@ -70,7 +70,7 @@ namespace Reloading_App
         /// <param name="e"></param>
         private void Search_Click(object sender, EventArgs e)
         {
-
+            // Display the results from the options selected
         }
 
     }

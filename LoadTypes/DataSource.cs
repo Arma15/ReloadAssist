@@ -12,12 +12,25 @@ namespace LoadTypes
     {
         private List<Caliber> Calibers;
         public string source { get; private set; }
-
+        public DataSource()
+        {
+            Calibers = new List<Caliber>();
+        }
         public void AddCaliber(Caliber cal)
         {
             // TODO
         }
-
+        public Caliber Find(string cal) 
+        {
+            foreach(Caliber Cal in Calibers) 
+            {
+                if (Cal.CaliberType == cal)
+                {
+                    return Cal;
+                }
+            }
+            return new Caliber();
+        }
 
     }
 }

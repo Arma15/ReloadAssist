@@ -1,6 +1,6 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.VisualBasic.FileIO;
+using System.IO;
 
 namespace Reloading_App
 {
@@ -14,9 +14,8 @@ namespace Reloading_App
         Handgun = 2,
         // Type of data from .csv
         Header = 10,
-        Data = 11,
-        Info = 12
-
+        CaliberData = 11,
+        CaliberInfo = 12
     }
 
     /// <summary>
@@ -27,18 +26,20 @@ namespace Reloading_App
         /// <summary>
         /// Store the path to desired file
         /// </summary>
-        public string Path { get; private set; }
+        public string InputPath { get; private set; }
 
         /// <summary>
         /// Reads the input .csv file and processes the data
         /// </summary>
-        /// <param name="NewPath"></param>
-        public void ProcessFile(string NewPath = "C:\\Users\\kflor\\source\\repos\\Reloading App\\Reloading App\\223_Caliber_Info.csv")
+        /// <param name="NewPath"> Path to desired file to input data from</param>
+        public void ProcessFile(string NewPath = "C:\\Users\\kflor\\source\\repos\\Reloading App\\Reloading App\\223_CaliberInfo.csv")
         {
-            Path = NewPath;
+            InputPath = NewPath;
+            string CaliberType = Path.GetFileName(NewPath);
+            // Returns Name of file + extension
             string[] ColumnHeaders;
             // Read the file
-            using (TextFieldParser CSVParser = new TextFieldParser(Path))
+            using (TextFieldParser CSVParser = new TextFieldParser(InputPath))
             {
                 CSVParser.SetDelimiters(new string[] { "," });
 
@@ -53,7 +54,7 @@ namespace Reloading_App
                     // Clears empty cells from the array
                     Fields = Fields.Where(x => !string.IsNullOrEmpty(x)).ToArray();
                     // Input data gathered from file
-                    InputData(Fields, Type.Data);
+                    InputData(Fields, Type.CaliberData);
 
                 }
 
@@ -68,7 +69,20 @@ namespace Reloading_App
         public void InputData(string[] Data, Type Datatype)
         {
             // TODO
+            switch (Datatype)
+            {
+                case Type.CaliberData:
+                    break;
+                    // Input data to the data field
+                case Type.CaliberInfo:
+                    break;
+                    // Input data to the Caliber info field
+                default:
+                    // Type not found
+                    break;
+            }
 
+           
         }
 
     }
