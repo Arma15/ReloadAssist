@@ -24,6 +24,10 @@ namespace LoadTypes
         /// </summary>
         public float BulletCoefficient { get; private set; }
         /// <summary>
+        /// COL = case overall length which can be specific to a bullet type
+        /// </summary>
+        public float COL { get; private set; }
+        /// <summary>
         /// Sectional density (SD) is the numerical result of a calculation that compares a bullet's 
         /// weight to its diameter. To calculate a bullet's sectional density divide the bullet's 
         /// weight (in pounds) by its diameter (in inches), squared.

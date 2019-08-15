@@ -23,7 +23,7 @@ namespace LoadTypes
         /// <summary>
         /// class holding the bullet specs
         /// </summary>
-        public List<BulletType> BulletTypes { get; set; } 
+        public List<BulletType> BulletTypes; 
         /// <summary>
         /// Max case length per the specifications/caliber
         /// </summary>

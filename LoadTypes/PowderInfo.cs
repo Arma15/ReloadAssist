@@ -10,7 +10,7 @@ namespace LoadTypes
         /// holds the amount of powder as key and value is velocity 
         /// generated from the powder load, i.e., 35.5gr, 2530 fps
         /// </summary>
-        public Dictionary<float, float> PowderLoadVelocity { get; private set; }
+        public Dictionary<float, float> PowderLoadVelocity;
 
         /// <summary>
         /// Ex: IMR4198, CFE223, etc..

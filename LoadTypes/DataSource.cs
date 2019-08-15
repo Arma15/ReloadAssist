@@ -10,7 +10,7 @@ namespace LoadTypes
     /// </summary>
     public class DataSource
     {
-        private List<Caliber> Calibers;
+        public List<Caliber> Calibers;
         public string source { get; private set; }
         public DataSource()
         {
