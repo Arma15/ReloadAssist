@@ -108,7 +108,7 @@ namespace Reloading_App
             String s = String.Format("{0,-15}{1,8}{2,8}{3,8}{4,8}{5,8}{6,8}\n", "Powder", "3300", "3400", "3500", "3600", "3700", "3800");
 
             s += "----------------------------------------------------------------\n";
-            DS.Calibers[0].BulletTypes[0].Powders[0].PowderLoadVelocity[19.2f];
+            var v = DS.Calibers[0].BulletTypes[0].Powders[0].PowderLoadVelocity[19.2f];
             for (int index = 0; index < powders.Length; index++)
             {
                 s += String.Format("{0,-15}", powders[index]);
