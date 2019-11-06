@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.VisualBasic.FileIO;
 using System.IO;
-
+using LoadTypes;
 namespace Reloading_App
 {
     /// <summary>
@@ -29,10 +29,21 @@ namespace Reloading_App
         public string InputPath { get; private set; }
 
         /// <summary>
+        /// Find all files ending in desired file type in provided path
+        /// </summary>
+        /// <param name="NewPath"></param>
+        public string[] FindAllFilesInDirectory(string NewPath)
+        {
+            // Return an array of strings with file names in directory passed in
+            string[] str = new string[0];
+            return str;
+        }
+
+        /// <summary>
         /// Reads the input .csv file and processes the data
         /// </summary>
         /// <param name="NewPath"> Path to desired file to input data from</param>
-        public void ProcessFile(string NewPath = "C:\\Users\\kflor\\source\\repos\\Reloading App\\Reloading App\\223_CaliberInfo.csv")
+        public void ProcessFile(ref DataSource DS, string NewPath = "C:\\Users\\kflor\\source\\repos\\Reloading App\\Reloading App\\223_CaliberInfo.csv")
         {
             InputPath = NewPath;
             string CaliberType = Path.GetFileName(NewPath);
