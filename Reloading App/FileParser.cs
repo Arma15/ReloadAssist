@@ -46,7 +46,10 @@ namespace Reloading_App
                 // Record the row with the column names
                 ColumnHeaders = CSVParser.ReadFields();
                 ColumnHeaders = ColumnHeaders.Where(x => !string.IsNullOrEmpty(x)).ToArray();
+                // Import the headers from the file
                 InputData(ColumnHeaders, Type.Header);
+
+                // Parse through and gather the remaining data fields
                 while (!CSVParser.EndOfData)
                 {
                     // Read current line fields, pointer moves to the next line.
