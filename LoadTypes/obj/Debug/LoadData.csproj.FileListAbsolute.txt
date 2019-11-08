@@ -5,3 +5,9 @@ C:\Users\kflor\source\repos\Reloading App\LoadTypes\obj\Debug\LoadData.csprojAss
 C:\Users\kflor\source\repos\Reloading App\LoadTypes\obj\Debug\LoadData.csproj.CoreCompileInputs.cache
 C:\Users\kflor\source\repos\Reloading App\LoadTypes\obj\Debug\LoadTypes.exe
 C:\Users\kflor\source\repos\Reloading App\LoadTypes\obj\Debug\LoadTypes.pdb
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\LoadTypes\bin\Debug\LoadTypes.exe.config
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\LoadTypes\bin\Debug\LoadTypes.exe
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\LoadTypes\bin\Debug\LoadTypes.pdb
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\LoadTypes\obj\Debug\LoadTypes.exe
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\LoadTypes\obj\Debug\LoadTypes.pdb
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\LoadTypes\obj\Debug\LoadData.csprojAssemblyReference.cache

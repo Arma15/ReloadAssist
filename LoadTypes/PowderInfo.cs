@@ -29,7 +29,10 @@ namespace LoadTypes
         #endregion Constructors / Destructors
 
         #region Functions
+        public void AddPowderLoadAndVelocity(float powderLoad, float velocity)
+        {
 
+        } 
         #endregion Functions
     }
 }

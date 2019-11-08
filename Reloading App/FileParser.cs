@@ -43,22 +43,31 @@ namespace Reloading_App
         /// Reads the input .csv file and processes the data
         /// </summary>
         /// <param name="NewPath"> Path to desired file to input data from</param>
-        public void ProcessFile(ref DataSource DS, string NewPath = "C:\\Users\\kflor\\source\\repos\\Reloading App\\Reloading App\\223_CaliberInfo.csv")
+        public void ProcessFile(ref DataSource DS, string NewPath = "C:\\Users\\3D Infotech.3DCA-LY520-12\\Desktop\\Git projects\\ReloadAssist\\Reloading App\\223_35gNTX.csv")
         {
             InputPath = NewPath;
-            string CaliberType = Path.GetFileName(NewPath);
+            // Check if file path exists
+            // TODO
+            char[] separators = { '_', '.' }; 
+            // Get the file name which contains caliber and bullet type data
+            string fileName = Path.GetFileName(NewPath);
+            // info[0] = caliber type, info[1] = bullet type (need to add condition for info files)
+            string[] info = fileName.Split(separators);
             // Returns Name of file + extension
             string[] ColumnHeaders;
+            Caliber cal = new Caliber(info[0]);
+
             // Read the file
             using (TextFieldParser CSVParser = new TextFieldParser(InputPath))
             {
-                CSVParser.SetDelimiters(new string[] { "," });
+                CSVParser.SetDelimiters(",");
+                CSVParser.TrimWhiteSpace = true;
 
                 // Record the row with the column names
                 ColumnHeaders = CSVParser.ReadFields();
                 ColumnHeaders = ColumnHeaders.Where(x => !string.IsNullOrEmpty(x)).ToArray();
                 // Import the headers from the file
-                InputData(ColumnHeaders, Type.Header);
+                InputData(ColumnHeaders, ref cal, Type.Header);
 
                 // Parse through and gather the remaining data fields
                 while (!CSVParser.EndOfData)
@@ -68,10 +77,8 @@ namespace Reloading_App
                     // Clears empty cells from the array
                     Fields = Fields.Where(x => !string.IsNullOrEmpty(x)).ToArray();
                     // Input data gathered from file
-                    InputData(Fields, Type.CaliberData);
-
+                    InputData(Fields, ref cal, Type.CaliberData);
                 }
-
             }
 
         }
@@ -80,17 +87,31 @@ namespace Reloading_App
         /// Formats the data gathered from the files
         /// </summary>
         /// <param name="Data"></param>
-        public void InputData(string[] Data, Type Datatype)
+        public void InputData(string[] Data, ref Caliber cal, Type Datatype)
         {
+            if (Data.Length < 1)
+            {
+                return;
+            }
             // TODO
             switch (Datatype)
             {
+                // Input data to the data field
                 case Type.CaliberData:
+
+
                     break;
-                    // Input data to the data field
+                // Input data to the Caliber info field (Headers)
                 case Type.CaliberInfo:
+                    if (Data[0].ToLower() == "powder")
+                    {
+                        
+                        for (int i = 1; i < Data.Length; ++i)
+                        {
+
+                        }
+                    }
                     break;
-                    // Input data to the Caliber info field
                 default:
                     // Type not found
                     break;

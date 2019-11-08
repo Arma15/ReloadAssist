@@ -56,7 +56,10 @@ namespace LoadTypes
         #endregion Constructors / Destructors
 
         #region Public Functions
+        public void AddPowder(PowderType pt)
+        {
 
+        }
         #endregion Public Functions
 
         #region Private Functions
