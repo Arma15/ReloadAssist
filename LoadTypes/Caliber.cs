@@ -21,11 +21,11 @@ namespace LoadTypes
             {
                 return false;
             }
-            
+            return LHS.Equals(RHS);
         }
         public static bool operator != (Caliber LHS, Caliber RHS)
         {
-            return !(LHS == RHS);
+            return !(LHS.Equals(RHS));
         }
         public override int GetHashCode()
         {
@@ -56,7 +56,7 @@ namespace LoadTypes
         public string CaliberFName { get; private set; }
         /// <summary>
         /// Will hold the specifications on the source the 
-        /// data was generated from, i.e., Remington 700, 26", 
+        /// data was generated, i.e., Remington 700, 26", 
         /// 1 in 12 twist... etc.
         /// </summary>
         public string CaliberInfo { get; private set; }
@@ -82,13 +82,58 @@ namespace LoadTypes
         /// <returns></returns>
         public float BulletDropEst() { return 0; }
         /// <summary>
-        /// Add a new bullet to the list
+        /// Add a new bullet to the list if not already in there, else append data
         /// </summary>
         /// <param name="bt"></param>
         public void AddBulletType(BulletType bt)
         {
-
+            int index = Find(bt);
+            // Check if bullet type exists in the List, if so then append data
+            // else add the whole data structure to the list of bullet types
+            if (index > 0)
+            {
+                BulletTypes.Add(bt);
+            }
+            else
+            {
+                // TODO
+            }
         }
+        /// <summary>
+        /// Finds if the bullet type exists in the list
+        /// </summary>
+        /// <param name="bt"> Compares the string to data member BulletBrand </param>
+        /// <returns> Returns the object if found, else null </returns>
+        public BulletType Find(string bt)
+        {
+            for (int i = 0; i < BulletTypes.Count; ++i)
+            {
+                if (BulletTypes[i].BulletBrand == bt)
+                {
+                    return BulletTypes[i];
+                }
+            }
+
+            return null;
+        }
+        /// <summary>
+        /// Finds if the bullet type exists in the list
+        /// </summary>
+        /// <param name="bt"> Takes object of BulletType to see if exists in list </param>
+        /// <returns> Returns the index if found, else -1 </returns>
+        public int Find(BulletType bt)
+        {
+            for (int i = 0; i < BulletTypes.Count; ++i)
+            {
+                if (BulletTypes[i] == bt)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
         private void SetFName()
         {
             switch (CaliberSName)

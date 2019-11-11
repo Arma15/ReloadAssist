@@ -32,7 +32,7 @@ namespace LoadTypes
         /// <summary>
         /// Bullet brand i.e., Hornady, Winchester, Federal, etc.
         /// </summary>
-        public float BulletBrand { get; private set; }
+        public string BulletBrand { get; private set; }
         /// <summary>
         /// Bullet weight is measured in grains
         /// </summary>
@@ -58,7 +58,51 @@ namespace LoadTypes
         #region Public Functions
         public void AddPowder(PowderType pt)
         {
+            int index = Find(pt);
+            // Check if bullet type exists in the List, if so then append data
+            // else add the whole data structure to the list of bullet types
+            if (index > 0)
+            {
+                Powders.Add(pt);
+            }
+            else
+            {
+                // TODO
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pt"></param>
+        /// <returns></returns>
+        private int Find(PowderType pt)
+        {
+            for (int i = 0; i < Powders.Count; ++i)
+            {
+                if (Powders[i] == pt)
+                {
+                    return i;
+                }
+            }
 
+            return -1;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pt"></param>
+        /// <returns></returns>
+        private PowderType Find(string pt)
+        {
+            for (int i = 0; i < Powders.Count; ++i)
+            {
+                if (Powders[i].PowderName == pt)
+                {
+                    return Powders[i];
+                }
+            }
+
+            return null;
         }
         #endregion Public Functions
 
