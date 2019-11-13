@@ -12,9 +12,7 @@ namespace LoadTypes
         /// </summary>
         public Dictionary<float, float> PowderLoadVelocity { get; private set; }
 
-        /// <summary>
-        /// Ex: IMR4198, CFE223, etc..
-        /// </summary>
+        /// <summary> Ex: IMR4198, CFE223, etc. </summary>
         public string PowderName { get; private set; }
 
         #endregion Data Fields

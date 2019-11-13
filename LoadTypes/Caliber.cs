@@ -10,6 +10,9 @@ namespace LoadTypes
     /// </summary>
     public class Caliber
     {
+        /******************************************************************************************
+		 * Operator overloading and Overrides
+		******************************************************************************************/
         #region Operator Overloading and Overrides
         public static bool operator == (Caliber LHS, Caliber RHS)
         {
@@ -37,6 +40,12 @@ namespace LoadTypes
             }
         }
         public override bool Equals(object RHS) { return this.CaliberSName == ((Caliber)RHS).CaliberSName; }
+        #endregion
+
+        /******************************************************************************************
+		 * Constructor / Destructor
+		******************************************************************************************/
+        #region Constructor and Destructor
         /// <summary>
         /// Constructor to initialize the type of caliber
         /// </summary>
@@ -46,13 +55,16 @@ namespace LoadTypes
             CaliberSName = type;
             SetFName();
         }
-        /// <summary>
-        /// ie, 224, 762x39, 762x51, etc.
-        /// </summary>
+        ~Caliber() {}
+        #endregion
+
+        /******************************************************************************************
+		 * Data Members and Properties
+		******************************************************************************************/
+        #region Data Members and Properties
+        /// <summary> ie, 224, 762x39, 762x51, etc. </summary>
         public string CaliberSName { get; private set; }
-        /// <summary>
-        /// ie, .224, 7.62x39, 7.62x51, etc.
-        /// </summary>
+        /// <summary> ie, .224, 7.62x39, 7.62x51, etc. </summary>
         public string CaliberFName { get; private set; }
         /// <summary>
         /// Will hold the specifications on the source the 
@@ -60,80 +72,81 @@ namespace LoadTypes
         /// 1 in 12 twist... etc.
         /// </summary>
         public string CaliberInfo { get; private set; }
-        /// <summary>
-        /// class holding the bullet specs
-        /// </summary>
-        public List<BulletType> BulletTypes { get; set; } 
-        /// <summary>
-        /// Max case length per the specifications/caliber
-        /// </summary>
+        /// <summary>class holding the bullet specs </summary>
+        public List<BulletBrand> Brands;
+        /// <summary> Max case length per the specifications/caliber </summary>
         public float MaxCOL { get; private set; }
-        /// <summary>
-        /// Max case length per the caliber
-        /// </summary>
+        /// <summary> Max case length per the caliber </summary>
         public float MaxCaseLen { get; private set; }
-        /// <summary>
-        /// Recommended length to trim if needed
-        /// </summary>
+        /// <summary> Recommended length to trim if needed </summary>
         public float CaseTrimLen { get; private set; }
-        /// <summary>
-        /// TODO: figure out what parameters are needed for estimate, **move to diff class**
-        /// </summary>
-        /// <returns></returns>
+        #endregion
+
+        /******************************************************************************************
+		 * Public Methods
+		******************************************************************************************/
+        #region Public Methods
+        /// <summary> TODO: figure out what parameters are needed for estimate, **move to diff class** </summary>
         public float BulletDropEst() { return 0; }
+
         /// <summary>
         /// Add a new bullet to the list if not already in there, else append data
         /// </summary>
         /// <param name="bt"></param>
-        public void AddBulletType(BulletType bt)
+        public void AddBulletType(BulletBrand bt)
         {
             int index = Find(bt);
             // Check if bullet type exists in the List, if so then append data
             // else add the whole data structure to the list of bullet types
             if (index > 0)
             {
-                BulletTypes.Add(bt);
+                Brands.Add(bt);
             }
             else
             {
                 // TODO
             }
         }
+
         /// <summary>
         /// Finds if the bullet type exists in the list
         /// </summary>
         /// <param name="bt"> Compares the string to data member BulletBrand </param>
         /// <returns> Returns the object if found, else null </returns>
-        public BulletType Find(string bt)
+        public BulletBrand Find(string bt)
         {
-            for (int i = 0; i < BulletTypes.Count; ++i)
+            for (int i = 0; i < Brands.Count; ++i)
             {
-                if (BulletTypes[i].BulletBrand == bt)
+                if (Brands[i].BrandName == bt)
                 {
-                    return BulletTypes[i];
+                    return Brands[i];
                 }
             }
 
             return null;
         }
+
         /// <summary>
         /// Finds if the bullet type exists in the list
         /// </summary>
         /// <param name="bt"> Takes object of BulletType to see if exists in list </param>
         /// <returns> Returns the index if found, else -1 </returns>
-        public int Find(BulletType bt)
+        public int Find(BulletBrand bt)
         {
-            for (int i = 0; i < BulletTypes.Count; ++i)
+            for (int i = 0; i < Brands.Count; ++i)
             {
-                if (BulletTypes[i] == bt)
+                if (Brands[i] == bt)
                 {
                     return i;
                 }
             }
 
-            return -1;
+            return Program.NOINDEX;
         }
 
+        /// <summary>
+        /// Sets fullname for reading purposes
+        /// </summary>
         private void SetFName()
         {
             switch (CaliberSName)
@@ -155,8 +168,7 @@ namespace LoadTypes
                     break;
             }
         }
-
-
+        #endregion
 
     }
 }

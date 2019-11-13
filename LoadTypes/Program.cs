@@ -8,6 +8,8 @@ namespace LoadTypes
 {
     class Program
     {
+        public const int NOINDEX = -1;
+
         static void Main(string[] args)
         {
 

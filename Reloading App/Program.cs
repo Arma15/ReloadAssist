@@ -13,7 +13,7 @@ namespace Reloading_App
         static void Main(string[] args)
         {
             FileProcessor FP = new FileProcessor();
-            DataSource DS = new DataSource();
+            DataSource DS = new DataSource("");
             // Load default data files
             FP.ProcessFile(ref DS);
              

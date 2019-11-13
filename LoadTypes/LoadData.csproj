@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BulletBrand.cs" />
     <Compile Include="BulletInfo.cs" />
     <Compile Include="Caliber.cs" />
     <Compile Include="DataSource.cs" />

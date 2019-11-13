@@ -5,17 +5,20 @@ using System.Linq;
 namespace LoadTypes
 {
     /// <summary>
-    /// Will store bullet info like brand and weight of a bullet
-    /// i.e., 35g NTX
+    /// Will store bullet info like type and weight of a bullet
+    /// i.e., 35g NTX along with the powders used with them
     /// </summary>
     public class BulletType
     {
-        //  Data members: B.C, S.D, Type, Weight, recommended powder load, fps per load, etc.
+        /******************************************************************************************
+        * Data Members and Properties
+        ******************************************************************************************/
         #region Data Fields
-        /// <summary>
-        /// Each PowderInfo item will contain info on a specific powder 
-        /// </summary>
+        // Data members: B.C, S.D, Type, Weight, recommended powder load, fps per load, etc.
+
+        /// <summary> Each PowderInfo item will contain info on a specific powder </summary>
         public List<PowderType> Powders;
+        public string BulletDescription; 
         /// <summary>
         /// In ballistics, the ballistic coefficient (BC) of a bullet is a measure of its ability to 
         /// overcome air resistance in flight. A high BC means the object will slow down less. 
@@ -23,45 +26,49 @@ namespace LoadTypes
         /// diameter, and drag coefficient.
         /// </summary>
         public float BulletCoefficient { get; private set; }
+
         /// <summary>
         /// Sectional density (SD) is the numerical result of a calculation that compares a bullet's 
         /// weight to its diameter. To calculate a bullet's sectional density divide the bullet's 
         /// weight (in pounds) by its diameter (in inches), squared.
         /// </summary>
         public float SectionalDensity { get; private set; }
-        /// <summary>
-        /// Bullet brand i.e., Hornady, Winchester, Federal, etc.
-        /// </summary>
-        public string BulletBrand { get; private set; }
-        /// <summary>
-        /// Bullet weight is measured in grains
-        /// </summary>
-        public int BulletWeight { get; private set; }
-        /// <summary>
-        /// Not always needed, as it falls under specific calibers
-        /// </summary>
-        public float BulletDiameter { get; private set; }
 
+        /// <summary> Holds the type of bullet, i.e., 35g NSX </summary>
+        public string Type { get; private set; } 
+
+        /// <summary> Bullet weight is measured in grains </summary>
+        public int BulletWeight { get; private set; }
+
+        /// <summary> Not always needed, as it falls under specific calibers </summary>
+        public float BulletDiameter { get; private set; }
         #endregion Data Fields
 
+        /******************************************************************************************
+        * Constructors / Destructors
+        ******************************************************************************************/
         #region Constructors / Destructors
         /// <summary>
         /// Default constructor
         /// </summary>
-        public BulletType() { }
+        public BulletType(string type) { Type = type; }
+
         /// <summary>
         /// Destructor
         /// </summary>
         ~BulletType() { }
         #endregion Constructors / Destructors
 
-        #region Public Functions
+        /******************************************************************************************
+        * Public Methods
+        ******************************************************************************************/
+        #region Public Methods
         public void AddPowder(PowderType pt)
         {
             int index = Find(pt);
             // Check if bullet type exists in the List, if so then append data
             // else add the whole data structure to the list of bullet types
-            if (index > 0)
+            if (index < 0)
             {
                 Powders.Add(pt);
             }
@@ -85,7 +92,7 @@ namespace LoadTypes
                 }
             }
 
-            return -1;
+            return Program.NOINDEX;
         }
         /// <summary>
         /// 
@@ -104,11 +111,11 @@ namespace LoadTypes
 
             return null;
         }
-        #endregion Public Functions
+        #endregion Public Methods
 
-        #region Private Functions
+        #region Private Methods
 
-        #endregion Private Functions
+        #endregion Private Methods
 
     }
 }
