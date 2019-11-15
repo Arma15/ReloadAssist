@@ -28,18 +28,8 @@ namespace Reloading_App
         /// </summary>
         public string InputPath { get; private set; }
         public string RootPath { get; private set; }
-        char[] separators = { '_', '.' };
+        readonly char[] separators = { '_', '.' };
 
-        /// <summary>
-        /// Find all files ending in desired file type in provided path
-        /// </summary>
-        /// <param name="NewPath"></param>
-        public string[] FindAllFilesInDirectory(string NewPath)
-        {
-            // Return an array of strings with file names in directory passed in
-            string[] str = new string[0];
-            return str;
-        }
 
         /// <summary>
         /// Reads the input .csv file and processes the data
@@ -103,7 +93,7 @@ namespace Reloading_App
                         BulletType newBulletType = new BulletType(currBulletType);
 
                         // Process data in the file
-                        InputData(bulletTypes[k], ref newBulletType);
+                        InputBulletData(bulletTypes[k], ref newBulletType);
 
                         // Add bulletType object to its corresponding bullet brand object
                         newBulletBrand.AddBullet(newBulletType);
@@ -121,31 +111,79 @@ namespace Reloading_App
         /// Formats the data gathered from the file
         /// </summary>
         /// <param name="Data"></param>
-        public void InputData(string filePath, ref BulletType bt)
+        public void InputBulletData(string filePath, ref BulletType bt)
         {
             // Read the file
             using (TextFieldParser CSVParser = new TextFieldParser(filePath))
             {
                 CSVParser.SetDelimiters(",");
                 CSVParser.TrimWhiteSpace = true;
-
                 // Record the row with the column names
                 string[] ColumnHeaders = CSVParser.ReadFields().Where(x => !string.IsNullOrEmpty(x)).ToArray();
+                if (ColumnHeaders.Length == 0)
+                {
+                    // Empty data file
+                    return;
+                }
+                int[] velocities = new int[ColumnHeaders.Length - 1];
+                if (ColumnHeaders[0].ToLower() != "powder")
+                {
+                    // Not reading a data file
+                    return;
+                }
+                for (int i = 1; i < ColumnHeaders.Length; ++i)
+                {
+                    if (int.TryParse(ColumnHeaders[i], out int newVelocity))
+                    {
+                        velocities[i - 1] = newVelocity;
+                    }
+                    else
+                    {
+                        // error converting string to double
+                    }
+                }
 
                 // Parse through and gather the remaining data fields
                 while (!CSVParser.EndOfData)
                 {
                     // Read current line fields, pointer moves to the next line.
-                    string[] Fields = CSVParser.ReadFields();
-                    // Clears empty cells from the array
-                    Fields = Fields.Where(x => !string.IsNullOrEmpty(x)).ToArray();
+                    // Fields format should be: [0] -> PowderName [1] -> [end] load ratings i.e., 20.6, 21.1 .. etc.
+                    string[] Fields = CSVParser.ReadFields().Where(x => !string.IsNullOrEmpty(x)).ToArray();
+                    if (Fields.Length == 0)
+                    {
+                        // Should not occur
+                        continue;
+                    }
+                    else if (Fields.Length != velocities.Length + 1)
+                    {
+                        // Error..should be the same size
+                    }
+                    // Create new powder type and initialize with the name
+                    PowderType pt = new PowderType(Fields[0]);
+
                     // Input data gathered from file
-                    // TODO
+                    for (int i = 0; i < velocities.Length; ++i)
+                    {
+                        if (float.TryParse(Fields[i + 1], out float load))
+                        {
+                            pt.AddPowderLoadAndVelocity(load, velocities[i]);
+                        }
+                        else if ((Fields[i + 1].ToLower() == "n/a"))
+                        {
+                            pt.AddPowderLoadAndVelocity(float.NaN, velocities[i]);
+                        }
+                        else
+                        {
+                            // Error
+                        }
+                    }
                 }
             }
-
         }
-
     }
-         
 }
+
+
+        
+         
+
