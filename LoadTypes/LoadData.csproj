@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BulletBrand.cs" />
-    <Compile Include="BulletInfo.cs" />
+    <Compile Include="BulletType.cs" />
     <Compile Include="Caliber.cs" />
     <Compile Include="DataSource.cs" />
     <Compile Include="PowderInfo.cs" />

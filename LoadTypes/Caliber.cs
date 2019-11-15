@@ -93,7 +93,7 @@ namespace LoadTypes
         /// Add a new bullet to the list if not already in there, else append data
         /// </summary>
         /// <param name="bt"></param>
-        public void AddBulletType(BulletBrand bt)
+        public void AddBulletBrand(BulletBrand bt)
         {
             int index = Find(bt);
             // Check if bullet type exists in the List, if so then append data

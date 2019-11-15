@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace LoadTypes
 {
+    /// <summary>
+    /// This class will hold the brand of bullets, i.e., Hornady, Barnes, etc.
+    /// </summary>
     public class BulletBrand
     {
         /******************************************************************************************

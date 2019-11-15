@@ -15,7 +15,7 @@ namespace Reloading_App
             FileProcessor FP = new FileProcessor();
             DataSource DS = new DataSource("");
             // Load default data files
-            FP.ProcessFile(ref DS);
+            FP.ProcessFiles(ref DS);
              
             // TODO
             // populate classes with the data

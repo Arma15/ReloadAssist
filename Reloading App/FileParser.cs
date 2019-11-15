@@ -45,21 +45,24 @@ namespace Reloading_App
         /// Reads the input .csv file and processes the data
         /// </summary>
         /// <param name="NewPath"> Path to desired file to input data from</param>
-        public void ProcessFile(ref DataSource DS, string NewPath = "C:\\Users\\3D Infotech.3DCA-LY520-12\\Desktop\\Git projects\\ReloadAssist\\Reloading App\\223_35gNTX.csv")
+        public void ProcessFiles(ref DataSource DS, string NewPath = "C:\\Users\\3D Infotech.3DCA-LY520-12\\Desktop\\Git projects\\ReloadAssist\\Reloading App\\223_35gNTX.csv")
         {
             RootPath = NewPath;
             string currCaliber, currBulletBrand, currBulletType;
+
             // Root directory does not exist
-            if (File.Exists(RootPath))
+            if (!File.Exists(RootPath))
             {
                 return;
             }
+
             string[] caliberTypes = Directory.GetDirectories(RootPath);
             // If there are no caliber folders in root directory
             if (caliberTypes == null)
             {
                 return;
             }
+
             // Loop through the caliber files and parse the folders in each
             for (int i = 0; i < caliberTypes.Length; ++i)
             {
@@ -69,43 +72,65 @@ namespace Reloading_App
                 {
                     continue;
                 }
+
+                // Get current caliber
+                string[] tempCal = Path.GetDirectoryName(caliberTypes[i]).Split(separators);
+                currCaliber = tempCal[0];
+                // Create a new caliber object for every caliber found in the files
+                Caliber newCal = new Caliber(currCaliber);
+
                 // Parse all data files in each folder
                 for (int j = 0; j < bulletBrands.Length; ++j)
                 {
-                    string[] files = Directory.GetDirectories(bulletBrands[j]);
-                    string fileName;
+                    string[] bulletTypes = Directory.GetDirectories(bulletBrands[j]);
                     // If no Bullet data exists in this folder then continue to next folder
-                    if (files == null)
+                    if (bulletTypes == null)
                     {
                         continue;
                     }
-                    for (int k = 0; k < files.Length; ++k)
+
+                    // Get current bullet brand
+                    string[] tempBrand = Path.GetDirectoryName(bulletBrands[j]).Split(separators);
+                    currBulletBrand = tempBrand[0];
+                    // Create new bullet brand object for every brand found in the files
+                    BulletBrand newBulletBrand = new BulletBrand(currBulletBrand);
+
+                    // Parse each .csv data file in the folder
+                    for (int k = 0; k < bulletTypes.Length; ++k)
                     {
-                        fileName = Path.GetFileName(bulletBrands[i]);
-                        string[] info = fileName.Split(separators);
+                        string[] info = Path.GetFileName(bulletTypes[k]).Split(separators);
+                        currBulletType = info[0];
+                        BulletType newBulletType = new BulletType(currBulletType);
+
                         // Process data in the file
+                        InputData(bulletTypes[k], ref newBulletType);
+
+                        // Add bulletType object to its corresponding bullet brand object
+                        newBulletBrand.AddBullet(newBulletType);
                     }
 
-
+                    // Add the bullet brand object to caliber object
+                    newCal.AddBulletBrand(newBulletBrand);
                 }
+                // Add the caliber object after filled with bullet brand objects
+                DS.AddCaliber(newCal);
             }
+        }
 
-            // Get the file name which contains caliber and bullet type data
-            // info[0] = caliber type, info[1] = bullet type (need to add condition for info files)
-            // Returns Name of file + extension
-            string[] ColumnHeaders;
-            Caliber cal = new Caliber(info[0]);
-
+        /// <summary>
+        /// Formats the data gathered from the file
+        /// </summary>
+        /// <param name="Data"></param>
+        public void InputData(string filePath, ref BulletType bt)
+        {
             // Read the file
-            using (TextFieldParser CSVParser = new TextFieldParser(InputPath))
+            using (TextFieldParser CSVParser = new TextFieldParser(filePath))
             {
                 CSVParser.SetDelimiters(",");
                 CSVParser.TrimWhiteSpace = true;
 
                 // Record the row with the column names
-                ColumnHeaders = CSVParser.ReadFields().Where(x => !string.IsNullOrEmpty(x)).ToArray();
-                // Import the headers from the file
-                InputData(ColumnHeaders, ref cal, Type.Header);
+                string[] ColumnHeaders = CSVParser.ReadFields().Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
                 // Parse through and gather the remaining data fields
                 while (!CSVParser.EndOfData)
@@ -115,47 +140,10 @@ namespace Reloading_App
                     // Clears empty cells from the array
                     Fields = Fields.Where(x => !string.IsNullOrEmpty(x)).ToArray();
                     // Input data gathered from file
-                    InputData(Fields, ref cal, Type.CaliberData);
+                    // TODO
                 }
             }
 
-        }
-
-        /// <summary>
-        /// Formats the data gathered from the files
-        /// </summary>
-        /// <param name="Data"></param>
-        public void InputData(string[] Data, ref Caliber cal, Type Datatype)
-        {
-            if (Data.Length < 1)
-            {
-                return;
-            }
-            // TODO
-            switch (Datatype)
-            {
-                // Input data to the data field
-                case Type.CaliberData:
-
-
-                    break;
-                // Input data to the Caliber info field (Headers)
-                case Type.CaliberInfo:
-                    if (Data[0].ToLower() == "powder")
-                    {
-                        
-                        for (int i = 1; i < Data.Length; ++i)
-                        {
-
-                        }
-                    }
-                    break;
-                default:
-                    // Type not found
-                    break;
-            }
-
-           
         }
 
     }
