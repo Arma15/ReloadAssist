@@ -12,3 +12,16 @@ C:\Users\kflor\source\repos\Reloading App\Reloading App\bin\Debug\LoadTypes.exe
 C:\Users\kflor\source\repos\Reloading App\Reloading App\bin\Debug\LoadTypes.pdb
 C:\Users\kflor\source\repos\Reloading App\Reloading App\bin\Debug\LoadTypes.exe.config
 C:\Users\kflor\source\repos\Reloading App\Reloading App\obj\Debug\Reloading App.csproj.CopyComplete
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\Reloading App\obj\Debug\Reloading App.csprojAssemblyReference.cache
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\Reloading App\obj\Debug\Reloading_App.Properties.Resources.resources
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\Reloading App\obj\Debug\Reloading_App.UserInterface.resources
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\Reloading App\obj\Debug\Reloading App.csproj.GenerateResource.cache
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\Reloading App\obj\Debug\Reloading App.exe
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\Reloading App\obj\Debug\Reloading App.pdb
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\Reloading App\bin\Debug\Reloading App.exe.config
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\Reloading App\bin\Debug\Reloading App.exe
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\Reloading App\bin\Debug\Reloading App.pdb
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\Reloading App\bin\Debug\LoadTypes.exe
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\Reloading App\bin\Debug\LoadTypes.pdb
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\Reloading App\bin\Debug\LoadTypes.exe.config
+C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Git projects\ReloadAssist\Reloading App\obj\Debug\Reloading App.csproj.CopyComplete
