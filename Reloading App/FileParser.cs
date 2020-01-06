@@ -45,7 +45,7 @@ namespace Reloading_App
             {
                 return;
             }
-
+            
             string[] caliberTypes = Directory.GetDirectories(RootPath);
             // If there are no caliber folders in root directory
             if (caliberTypes == null)
@@ -78,7 +78,7 @@ namespace Reloading_App
                     {
                         continue;
                     }
-
+                    
                     // Get current bullet brand
                     string[] tempBrand = Path.GetDirectoryName(bulletBrands[j]).Split(separators);
                     currBulletBrand = tempBrand[0];
