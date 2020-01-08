@@ -12,14 +12,6 @@ namespace Reloading_App
         [STAThread]
         static void Main(string[] args)
         {
-            FileProcessor FP = new FileProcessor();
-            DataSource DS = new DataSource("");
-            // Load default data files
-            FP.ProcessFiles(ref DS);
-             
-            // TODO
-            // populate classes with the data
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new UserInterface());

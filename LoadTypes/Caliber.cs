@@ -43,22 +43,6 @@ namespace LoadTypes
         #endregion
 
         /******************************************************************************************
-		 * Constructor / Destructor
-		******************************************************************************************/
-        #region Constructor and Destructor
-        /// <summary>
-        /// Constructor to initialize the type of caliber
-        /// </summary>
-        /// <param name="type"></param>
-        public Caliber(string type)
-        {
-            CaliberSName = type;
-            SetFName();
-        }
-        ~Caliber() {}
-        #endregion
-
-        /******************************************************************************************
 		 * Data Members and Properties
 		******************************************************************************************/
         #region Data Members and Properties
@@ -80,6 +64,23 @@ namespace LoadTypes
         public float MaxCaseLen { get; private set; }
         /// <summary> Recommended length to trim if needed </summary>
         public float CaseTrimLen { get; private set; }
+        #endregion
+
+        /******************************************************************************************
+		 * Constructor / Destructor
+		******************************************************************************************/
+        #region Constructor and Destructor
+        /// <summary>
+        /// Constructor to initialize the type of caliber
+        /// </summary>
+        /// <param name="type"></param>
+        public Caliber(string type)
+        {
+            CaliberSName = type;
+            SetFName();
+            Brands = new List<BulletBrand>();
+        }
+        ~Caliber() {}
         #endregion
 
         /******************************************************************************************

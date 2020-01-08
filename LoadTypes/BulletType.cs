@@ -18,7 +18,7 @@ namespace LoadTypes
 
         /// <summary> Each PowderInfo item will contain info on a specific powder </summary>
         public List<PowderType> Powders;
-        public string BulletDescription; 
+        public string BulletDescription;
         /// <summary>
         /// In ballistics, the ballistic coefficient (BC) of a bullet is a measure of its ability to 
         /// overcome air resistance in flight. A high BC means the object will slow down less. 

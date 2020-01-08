@@ -7,10 +7,10 @@ namespace LoadTypes
     {
         #region Data Fields
         /// <summary>
-        /// holds the amount of powder as key and value is velocity 
+        /// holds the amount of powder as key and value is velocity
         /// generated from the powder load, i.e., 35.5gr, 2530 fps
         /// </summary>
-        public Dictionary<float, float> PowderLoadVelocity { get; private set; }
+        public Dictionary<float, float> PowderLoadVelocity;
 
         /// <summary> Ex: IMR4198, CFE223, etc. </summary>
         public string PowderName { get; private set; }
@@ -22,9 +22,10 @@ namespace LoadTypes
         /// Constructor that sets
         /// </summary>
         /// <param name="powdername"></param>
-        public PowderType(string powdername) 
+        public PowderType(string powdername)
         { 
-            PowderName = powdername; 
+            PowderName = powdername;
+            PowderLoadVelocity = new Dictionary<float, float>();
         }
 
         #endregion Constructors / Destructors
@@ -69,7 +70,7 @@ namespace LoadTypes
 
         public void AddPowderLoadAndVelocity(float powderLoad, float velocity)
         {
-            if (PowderLoadVelocity.ContainsKey(powderLoad))
+            if (PowderLoadVelocity != null && PowderLoadVelocity.ContainsKey(powderLoad))
             {
                 // Temporary log system
                 Console.WriteLine($"{DateTime.Now}: PowderInfo (duplicate data) --> key: {powderLoad} value(passed): {velocity}, value(existing): {PowderLoadVelocity[powderLoad]} already in dataset");

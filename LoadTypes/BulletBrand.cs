@@ -30,6 +30,7 @@ namespace LoadTypes
         public BulletBrand(string name)
         {
             BrandName = name;
+            Bullets = new List<BulletType>();
         }
         ~BulletBrand() { }
         #endregion Constructors / Destructors

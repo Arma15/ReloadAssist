@@ -28,6 +28,7 @@ namespace Reloading_App
         /// </summary>
         public string InputPath { get; private set; }
         public string RootPath { get; private set; }
+        // Filenames Example: 223_35gNTX
         readonly char[] separators = { '_', '.' };
 
 
@@ -35,20 +36,20 @@ namespace Reloading_App
         /// Reads the input .csv file and processes the data
         /// </summary>
         /// <param name="NewPath"> Path to desired file to input data from</param>
-        public void ProcessFiles(ref DataSource DS, string NewPath = "C:\\Users\\3D Infotech.3DCA-LY520-12\\Desktop\\Git projects\\ReloadAssist\\Reloading App\\223_35gNTX.csv")
+        public void ProcessFiles(ref DataSource DS, string NewPath = "C:\\Users\\3D Infotech.3DCA-LY520-12\\Desktop\\New folder\\Git projects\\ReloadAssist\\Reloading App\\LoadData\\")
         {
             RootPath = NewPath;
             string currCaliber, currBulletBrand, currBulletType;
 
             // Root directory does not exist
-            if (!File.Exists(RootPath))
+            if (!Directory.Exists(RootPath))
             {
                 return;
             }
             
             string[] caliberTypes = Directory.GetDirectories(RootPath);
             // If there are no caliber folders in root directory
-            if (caliberTypes == null)
+            if (caliberTypes.Length == 0)
             {
                 return;
             }
@@ -58,30 +59,28 @@ namespace Reloading_App
             {
                 string[] bulletBrands = Directory.GetDirectories(caliberTypes[i]);
                 // If no files in caliber folder then go to next file
-                if (bulletBrands == null)
+                if (bulletBrands.Length == 0)
                 {
                     continue;
                 }
 
                 // Get current caliber
-                string[] tempCal = Path.GetDirectoryName(caliberTypes[i]).Split(separators);
-                currCaliber = tempCal[0];
+                currCaliber = Path.GetFileName(caliberTypes[i]);
                 // Create a new caliber object for every caliber found in the files
                 Caliber newCal = new Caliber(currCaliber);
 
                 // Parse all data files in each folder
                 for (int j = 0; j < bulletBrands.Length; ++j)
                 {
-                    string[] bulletTypes = Directory.GetDirectories(bulletBrands[j]);
+                    string[] bulletTypes = Directory.GetFiles(bulletBrands[j]);
                     // If no Bullet data exists in this folder then continue to next folder
-                    if (bulletTypes == null)
+                    if (bulletTypes.Length == 0)
                     {
                         continue;
                     }
-                    
+
                     // Get current bullet brand
-                    string[] tempBrand = Path.GetDirectoryName(bulletBrands[j]).Split(separators);
-                    currBulletBrand = tempBrand[0];
+                    currBulletBrand = Path.GetFileName(bulletBrands[j]);
                     // Create new bullet brand object for every brand found in the files
                     BulletBrand newBulletBrand = new BulletBrand(currBulletBrand);
 
@@ -89,7 +88,7 @@ namespace Reloading_App
                     for (int k = 0; k < bulletTypes.Length; ++k)
                     {
                         string[] info = Path.GetFileName(bulletTypes[k]).Split(separators);
-                        currBulletType = info[0];
+                        currBulletType = info[0] + " " + info[1];
                         BulletType newBulletType = new BulletType(currBulletType);
 
                         // Process data in the file
